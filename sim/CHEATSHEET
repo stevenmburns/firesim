@@ -1,0 +1,7 @@
+make -C /nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/generated-src/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/VGCDJson.csrc -f Vverilator_top.mk
+
+( cd /nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/generated-src/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config && ./VGCDJson +seed=47 +dramsim +waveform=/nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/output/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/GCDJson.verilator.vcd 2> /nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/output/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/GCDJson.verilator.out;  )
+
+tkdiff output/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/GCDJson.{vcs,verilator}.out
+
+(cd /nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/generated-src/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config && ./GCDJson-debug +vcs+initreg+0 +vcs+initmem+0 +seed=47   +dramsim +waveform=/nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/output/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/GCDJson.vcs.vpd 2> /nfs/site/disks/scl.work.50/ash/users/smburns/firesim/sim/output/f1/GCDJson-NoConfig-HostDebugFeatures_DefaultF1Config/GCDJson.vcs.out; )

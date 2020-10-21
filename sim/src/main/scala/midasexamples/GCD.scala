@@ -76,4 +76,7 @@ class GCDDUT extends Module {
   assert(!done1 || !done2 || (result1 === result2), "Outputs do not match!")
 }
 
-class GCD(implicit p: Parameters) extends PeekPokeMidasExampleHarness(() => new GCDDUT)
+class GCD(implicit p: Parameters) extends PeekPokeMidasExampleHarness(() => new 
+GCDDUT)
+
+class GCDJson(implicit p: Parameters) extends PeekPokeMidasExampleHarness(() => new GCDInner)

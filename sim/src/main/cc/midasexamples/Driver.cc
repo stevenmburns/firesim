@@ -11,6 +11,10 @@
 #include "EnableShiftRegister.h"
 #elif defined DESIGNNAME_GCD
 #include "GCD.h"
+#elif defined DESIGNNAME_GCDJson
+#include "GCDJson.h"
+#elif defined DESIGNNAME_GCDwithTB
+#include "GCDwithTB.h"
 #elif defined DESIGNNAME_Parity
 #include "Parity.h"
 #elif defined DESIGNNAME_PointerChaser
