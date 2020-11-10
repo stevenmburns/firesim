@@ -102,7 +102,7 @@ class GCDwithTBF1Test extends TutorialSuite("GCDwithTB") {
 
 class GCDJsonF1Test extends TutorialSuite("GCDJson") {
 //  runTest("verilator", true)
-  runTest("vcs", true)
+//  runTest("vcs", true)
 }
 
 // Hijack Parity to test all of the Midas-level backends
