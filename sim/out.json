@@ -1,0 +1,540 @@
+[
+  {
+    "time": 0,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "reset",
+        "value": "1"
+      },
+      {
+        "variable": "io_e",
+        "value": "0"
+      },
+      {
+        "variable": "io_a",
+        "value": "0000000000000000"
+      },
+      {
+        "variable": "io_b",
+        "value": "0000000000000000"
+      },
+      {
+        "variable": "io_v",
+        "value": "0"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000110000000000"
+      }
+    ]
+  },
+  {
+    "time": 1000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 2000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000101010111100"
+      }
+    ]
+  },
+  {
+    "time": 3000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 4000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000100101111000"
+      }
+    ]
+  },
+  {
+    "time": 5000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 6000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000100000110100"
+      }
+    ]
+  },
+  {
+    "time": 7000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 8000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000011011110000"
+      }
+    ]
+  },
+  {
+    "time": 9000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 10000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "1000010110101100"
+      }
+    ]
+  },
+  {
+    "time": 11000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      },
+      {
+        "variable": "reset",
+        "value": "0"
+      },
+      {
+        "variable": "io_e",
+        "value": "1"
+      },
+      {
+        "variable": "io_a",
+        "value": "0000000101101000"
+      },
+      {
+        "variable": "io_b",
+        "value": "0000000000011011"
+      }
+    ]
+  },
+  {
+    "time": 12000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000101101000"
+      }
+    ]
+  },
+  {
+    "time": 13000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      },
+      {
+        "variable": "io_e",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 14000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000101001101"
+      }
+    ]
+  },
+  {
+    "time": 15000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 16000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000100110010"
+      }
+    ]
+  },
+  {
+    "time": 17000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 18000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000100010111"
+      }
+    ]
+  },
+  {
+    "time": 19000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 20000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000011111100"
+      }
+    ]
+  },
+  {
+    "time": 21000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 22000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000011100001"
+      }
+    ]
+  },
+  {
+    "time": 23000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 24000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000011000110"
+      }
+    ]
+  },
+  {
+    "time": 25000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 26000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000010101011"
+      }
+    ]
+  },
+  {
+    "time": 27000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 28000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000010010000"
+      }
+    ]
+  },
+  {
+    "time": 29000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 30000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000001110101"
+      }
+    ]
+  },
+  {
+    "time": 31000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 32000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000001011010"
+      }
+    ]
+  },
+  {
+    "time": 33000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 34000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000000111111"
+      }
+    ]
+  },
+  {
+    "time": 35000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 36000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000000100100"
+      }
+    ]
+  },
+  {
+    "time": 37000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 38000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_z",
+        "value": "0000000000001001"
+      }
+    ]
+  },
+  {
+    "time": 39000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 40000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "time": 41000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 42000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "time": 43000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "time": 44000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "1"
+      },
+      {
+        "variable": "io_v",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "time": 45000,
+    "changes": [
+      {
+        "variable": "clock",
+        "value": "0"
+      }
+    ]
+  }
+]
