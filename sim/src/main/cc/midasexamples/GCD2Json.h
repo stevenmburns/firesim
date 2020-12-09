@@ -18,15 +18,25 @@
 
 using namespace nlohmann;
 
-class GCDJson_t: virtual simif_t
+void replaceStrChar( std::string& str, const std::string& replace, char ch) {
+  size_t found = str.find_first_of(replace);
+  while (found != std::string::npos) {
+    str[found] = ch;
+    found = str.find_first_of(replace, found+1);
+  }
+}
+
+class GCD2Json_t: virtual simif_t
 {
 public:
 
   json j;
   std::optional<unsigned int> state_reset;
   std::map<std::string,std::optional<std::string> > state_values;
-  std::map<std::string,size_t> input_vars;
   std::map<std::string,size_t> output_vars;
+  std::map<std::string,size_t> input_vars;
+
+  int clock_edge_count;
 
   void process_time( const json::iterator& it) {
     int time = it->at("time");
@@ -54,56 +64,63 @@ public:
 
     std::optional<unsigned int> optClock;
 
-    std::map<std::string,std::string> output_values;
+    std::map<std::string,std::string> input_values;
 
     const auto & j2 = it->at("changes");
     for (json::const_iterator it2 = j2.begin(); it2 != j2.end(); ++it2) {
       std::string var(it2->at("variable"));
       std::string val(it2->at("value"));
 
-      std::cout << "\t" << var << " " << val << std::endl;
-      {
-        auto it3 = output_vars.find(var);
-        if ( it3 != output_vars.end()) {
-          output_values.insert(std::make_pair( it3->first, val));
-        }
-      }
-      {
-        auto it3 = state_values.find(var);
-        if ( it3 != state_values.end()) {
-          it3->second = std::optional<std::string>(val);
-        }
-      }
+      std::string val0(val);
+      replaceStrChar( val0, "xz", '0');
+
+      std::cout << "\t" << var << " " << val << " (" << val0 << ")" << std::endl;
       if ( var == "clock") {
         optClock = std::optional<unsigned int>(std::stoi(val,0,2));
+      } else {
+	{
+	  auto it3 = input_vars.find(var);
+	  if ( it3 != input_vars.end()) {
+	    input_values.insert(std::make_pair( it3->first, val0));
+	  }
+	}
+	{
+	  auto it3 = state_values.find(var);
+	  if ( it3 != state_values.end()) {
+	    if ( val == val0) {
+	      it3->second = std::optional<std::string>(val);
+	    } else {
+	      it3->second = std::nullopt;
+	    }
+	  }
+	}
       }
+    }
+
+    if ( optClock.has_value() && *optClock == 1) {
+      std::cout << "Clock Edge " << clock_edge_count << " at time " << time << std::endl;
+      step(1);
+      clock_edge_count += 1;
 
     }
 
-    assert(optClock);
-
-    assert( time % 1000 == 0);
-    if ( *optClock == 1) {
-      assert( time % 2000 == 0);
-      step(1);
-    } else {
-      assert( time % 2000 == 1000);
+    for (auto it3 = input_values.begin(); it3 != input_values.end(); ++it3) {
+      pokeWithStr( input_vars[it3->first], it3->second);
     }
 
     if ( state_reset && *state_reset == 0) {
-      for (auto it3 = input_vars.begin(); it3 != input_vars.end(); ++it3) {
-        expectWithStr( it3->second, *state_values[it3->first]);
+      for (auto it3 = output_vars.begin(); it3 != output_vars.end(); ++it3) {
+	auto st_opt = state_values[it3->first];
+	if ( st_opt.has_value()) {
+	  expectWithStr( it3->second, *st_opt);
+	}
       }
-    }
-
-    for (auto it3 = output_values.begin(); it3 != output_values.end(); ++it3) {
-      pokeWithStr( output_vars[it3->first], it3->second);
     }
 
     {
       // Do the assignment to state_reset after the test on state_reset above
-      auto it3 = output_values.find("reset");
-      if ( it3 != output_values.end()) {
+      auto it3 = input_values.find("reset");
+      if ( it3 != input_values.end()) {
         state_reset = std::optional<unsigned int>(std::stoi(it3->second,0,2));
       }
     }
@@ -111,7 +128,7 @@ public:
   }
 
 
-  GCDJson_t(int argc, char** argv) {
+  GCD2Json_t(int argc, char** argv) {
 
     std::string filename = "/nfs/sc/disks/scl.work.52/ppt/users/smburns/Berkeley/firesim/sim/out.json";
     std::ifstream ifs(filename);
@@ -123,21 +140,22 @@ public:
       ifs.close();
     }
 
-    output_vars.insert(std::make_pair( "io_a", io_a));
-    output_vars.insert(std::make_pair( "io_b", io_b));
-    output_vars.insert(std::make_pair( "io_e", io_e));
-    output_vars.insert(std::make_pair( "reset", reset));
+    input_vars.insert(std::make_pair( "io_a", io_a));
+    input_vars.insert(std::make_pair( "io_b", io_b));
+    input_vars.insert(std::make_pair( "io_e", io_e));
+    input_vars.insert(std::make_pair( "reset", reset));
 
-    input_vars.insert(std::make_pair( "io_v", io_v));
-    input_vars.insert(std::make_pair( "io_z", io_z));
+    output_vars.insert(std::make_pair( "io_v", io_v));
+    output_vars.insert(std::make_pair( "io_z", io_z));
 
-    for ( auto it3 = input_vars.begin(); it3 != input_vars.end(); ++it3) {
+    for ( auto it3 = output_vars.begin(); it3 != output_vars.end(); ++it3) {
       state_values.insert( std::make_pair(it3->first, std::optional<std::string>()));
     }
   }
 
 
   void run() {
+    clock_edge_count = 0;
     for ( json::iterator it = j.begin(); it != j.end(); ++it) {
       process_time(it);
     }

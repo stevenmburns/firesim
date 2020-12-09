@@ -9,3 +9,6 @@ firrtl_black_box_resource_files.f
 lib/firrtl.jar
 *.swp
 .bloop/
+*~
+__pycache__/
+

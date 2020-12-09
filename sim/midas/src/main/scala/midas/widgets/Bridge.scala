@@ -107,7 +107,7 @@ trait HasChannels {
     require(allTargetClocks.nonEmpty,
       s"Target-side bridge interface of ${targetPortProto.getClass} has no clock field.")
     require(allTargetClocks.size == 1,
-      s"Target-side bridge interface of ${targetPortProto.getClass} has ${allTargetClocks.size} clocks but must define only one.")
+      s"Target-side bridge interface of ${targetPortProto.getClass} has ${allTargetClocks.size} clocks but must define only one: ${allTargetClocks}")
     allTargetClocks.head
   }
 

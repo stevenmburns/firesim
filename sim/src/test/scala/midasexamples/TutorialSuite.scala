@@ -88,7 +88,7 @@ abstract class TutorialSuite(
   }
 
   clean
-  runTest(backendSimulator)
+  //runTest(backendSimulator)
 }
 
 //class PointerChaserF1Test extends TutorialSuite(
@@ -97,12 +97,22 @@ class GCDF1Test extends TutorialSuite("GCD")
 
 class GCDwithTBF1Test extends TutorialSuite("GCDwithTB") {
 //  runTest("verilator", true)
-  runTest("vcs", true)
+//  runTest("vcs", true)
 }
 
 class GCDJsonF1Test extends TutorialSuite("GCDJson") {
-//  runTest("verilator", true)
-//  runTest("vcs", true)
+  //runTest("verilator", true)
+  runTest("vcs", true)
+}
+
+class GCD2JsonF1Test extends TutorialSuite("GCD2Json") {
+  //runTest("verilator", true)
+  runTest("vcs", true)
+}
+
+class SchExcJsonF1Test extends TutorialSuite("SchExcJson") {
+  //runTest("verilator", true)
+  runTest("vcs", true)
 }
 
 // Hijack Parity to test all of the Midas-level backends
